@@ -6,10 +6,10 @@ from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 Bootstrap(app)
-db_name = 'world'   #mysql sample db
+
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:mysql@localhost:3306/"+db_name
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://xxx:xxx@localhost:3306/"
 
 # this variable, db, will be used for all SQLAlchemy commands
 db = SQLAlchemy(app)
@@ -38,23 +38,18 @@ class Country(db.Model):
     population = db.Column(db.Integer)
     lifeexpectancy = db.Column(db.Float)
     gnp = db.Column(db.Float)
-    gnpold = db.Column(db.Float)
-    localname = db.Column(db.String)
-    governmentform = db.Column(db.String)
-    headofstate = db.Column(db.String)
-    capital = db.Column(db.Integer) 
-    code2 = db.Column(db.String)
+
     
-    city = db.relationship('City', backref='country')
+    
     
 @app.route('/home',methods=['POST','GET'])
 def home():
     if request.method=='POST':
-        if request.values['send'] == 'go':
+        if request.values['send'] == 'send':
             cname = request.form["city"]
-            icity = City.query.filter(City.name==cname).first()
-            icountry = Country.query.filter(Country.code==icity.countrycode).first()
-            return render_template('home-1.html', city = icity, country=icountry)
+            icity = City.query.filter(City.name==cname)
+            icountry = Country.query.filter(Country.code==icity.countrycode)
+            return render_template('home-1.html', city = icity)
     return render_template('home.html')    
  
 @app.route('/overlay',methods=['POST','GET'])
@@ -63,4 +58,4 @@ def overlay():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port='5000',debug=True)
+    app.run(host='0.0.0.0',port='5000)
