@@ -10,6 +10,6 @@ The folder structure has to be as following:
 ![folder](./folder.png)
 
 UI preview for your favorite city:
-![my site](./my site.png)
+![my site](./my_site.png)
 
 
