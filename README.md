@@ -7,17 +7,9 @@ I use MySql and its sample db "world", to use SQLAlchemy, each table in the data
 program.
 
 The folder structure has to be as following:
-D.flask
-│  sqlapp.py
-│
-├─static
-│  └─images
-│          aaron-burden-b9drVB7xIOI-unspl.png
-│          mona-eendra-vC8wj_Kphak-unspla.png
-│          olivia-hutcherson-rN3m7aTH3io-.png
-│
-└─templates
-        home.html
-        home1.html
-        overlay.html
 ![folder](./folder.png)
+
+UI preview for your favorite city:
+![my site](./my site.png)
+
+
