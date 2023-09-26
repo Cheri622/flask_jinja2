@@ -9,7 +9,7 @@ program.
 The folder structure has to be as following:
 ![folder](./folder.png)
 
-UI preview for your favorite city:
+A screen display of this website: 'your favorite city':
 ![my site](./my_site.png)
 
 
